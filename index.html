@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devora – Web Development Basics for Beginners: HTML, CSS, JavaScript and a Clear Learning Path</title>
+<meta name="description" content="Devora is an educational guide to web development for beginners: what front-end and back-end mean, how HTML, CSS and JavaScript work together, the tools to start with and a step-by-step learning path.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#10162b;--indigo:#1b2350;--indigo2:#262f6b;--teal:#1fc8b4;--teal2:#5eead4;--pink:#ff6b9a;--bg:#f5f7fc;--txt:#1d2336;--mut:#5a6380;--w:#fff;--line:#dfe4f1}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--txt);background:var(--bg);line-height:1.75;font-size:17.5px}
+h1,h2,h3,.pill,.btn,.mono{font-family:'Inter','Segoe UI',Roboto,Arial,sans-serif}
+code,pre,.code{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+a{color:#3b4fd8}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 26px}
+header{background:var(--ink);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:15px;padding-bottom:15px}
+.logo{font:800 25px 'Inter','Segoe UI',Arial,sans-serif;color:#fff;text-decoration:none;letter-spacing:-.4px}
+.logo b{color:var(--teal2)}
+nav a{color:#b9c2e6;text-decoration:none;margin-left:21px;font-size:14.5px}
+nav a:hover{color:#fff}
+.hero{background:radial-gradient(circle at 80% 20%,#2e3a86 0%,#161d44 45%,#10162b 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center;padding-top:84px;padding-bottom:84px}
+.pill{display:inline-block;background:rgba(94,234,212,.14);color:var(--teal2);border:1px solid rgba(94,234,212,.4);font-weight:600;font-size:13px;padding:6px 16px;border-radius:30px;margin-bottom:20px}
+h1{font-size:clamp(33px,4.7vw,54px);line-height:1.13;letter-spacing:-.8px;margin-bottom:20px}
+h1 em{font-style:normal;color:var(--teal2)}
+.hero p{font-size:19px;color:#c6cdee;max-width:540px;margin-bottom:30px}
+.btn{display:inline-block;background:var(--teal);color:#06231f;text-decoration:none;font-weight:700;padding:14px 30px;border-radius:8px;font-size:16px}
+.btn:hover{background:var(--teal2)}
+.win{background:#0b1024;border:1px solid #2c3568;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);overflow:hidden}
+.win .bar{display:flex;gap:7px;padding:12px 16px;background:#141b3a}
+.win .bar i{width:11px;height:11px;border-radius:50%;display:block}
+.win pre{padding:22px 24px;font-size:14.5px;line-height:1.75;color:#d5dcff;overflow-x:auto;white-space:pre}
+.k{color:#ff7ab0}.s{color:#9ef0c8}.t{color:#7cc4ff}.c{color:#7380b3}
+section{padding:80px 0}
+.white{background:var(--w)}
+.tint{background:#eaf0fb}
+.dark{background:var(--ink);color:#c9d0ee}
+.dark h2,.dark h3{color:#fff}
+h2{font-size:clamp(27px,3.3vw,37px);line-height:1.2;color:var(--ink);margin-bottom:18px;letter-spacing:-.4px}
+h3{font-size:19.5px;color:#3b4fd8;margin:4px 0 8px}
+.lead{max-width:800px;color:var(--mut);font-size:19px;margin-bottom:34px}
+p+p{margin-top:15px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.duo img{width:100%;height:420px;object-fit:cover;border-radius:14px;background:#c9d2ec;box-shadow:12px 12px 0 var(--teal)}
+.duo.rev img{order:-1;box-shadow:-12px 12px 0 var(--pink)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tc{background:var(--w);border-radius:14px;padding:28px;border:1px solid var(--line);box-shadow:0 4px 18px rgba(27,35,80,.07)}
+.tc .tag{display:inline-block;font:700 12.5px 'Inter',Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#fff;padding:4px 12px;border-radius:6px;margin-bottom:12px}
+.tc p{font-size:16.2px;color:var(--mut);line-height:1.7}
+.tc code{display:block;background:#0f1530;color:#cfd7ff;padding:12px 14px;border-radius:8px;font-size:13.5px;margin-top:14px;overflow-x:auto;white-space:pre}
+.road{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.rd{border:1px solid #333d78;background:rgba(255,255,255,.05);border-radius:12px;padding:24px 18px}
+.rd b{display:block;font:800 30px 'Inter',Arial,sans-serif;color:var(--teal2);line-height:1;margin-bottom:10px}
+.rd p{font-size:15.3px;color:#bcc5ea;line-height:1.65}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px}
+.tl{padding-bottom:16px;border-bottom:1px solid var(--line)}
+.tl p{font-size:16.4px;color:var(--mut);line-height:1.7}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.gal img{width:100%;height:230px;object-fit:cover;border-radius:12px;background:#c9d2ec}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tp{background:var(--w);border-top:5px solid var(--pink);border-radius:10px;padding:24px;box-shadow:0 3px 14px rgba(27,35,80,.08)}
+.tp p{font-size:16px;color:var(--mut);line-height:1.68}
+.faq{max-width:900px;margin:0 auto}
+.faq details{background:var(--w);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:8px;padding:17px 22px;margin-bottom:13px}
+.faq summary{cursor:pointer;font:700 17.5px 'Inter','Segoe UI',Arial,sans-serif;color:var(--ink)}
+.faq p{margin-top:11px;color:var(--mut);font-size:16.3px}
+.disc{background:#fff8e1;border:1px solid #ecd999;border-radius:10px;padding:28px 30px}
+.disc h2{font-size:23px;margin-bottom:10px}
+.disc p{font-size:15.8px;color:#4a4325;line-height:1.7}
+footer{background:#0a0f20;color:#a7b0d4;padding:46px 0 30px;font-size:15px}
+footer a{color:#e3e8ff;margin-right:20px}
+footer p{margin-top:14px;max-width:900px;line-height:1.6}
+@media(max-width:1000px){.hero .wrap,.duo,.tri,.road,.tools,.gal,.tips{grid-template-columns:1fr}.duo img{height:290px}.duo.rev img{order:0}section{padding:54px 0}nav a{margin:0 14px 0 0}.hero .wrap{padding-top:50px;padding-bottom:54px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap">
+<a class="logo" href="#top">Dev<b>ora</b></a>
+<nav>
+<a href="#why">Why learn</a>
+<a href="#web">How the web works</a>
+<a href="#blocks">Building blocks</a>
+<a href="#path">Learning path</a>
+<a href="#tools">Tools</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+<div class="wrap">
+<div>
+<span class="pill">Beginner Web Development Guide</span>
+<h1>Devora: Understand How Websites Are Built, <em>Step by Step</em></h1>
+<p>You do not need to be a genius to start learning web development. Devora explains how websites work, introduces HTML, CSS and JavaScript in plain language, and lays out a realistic path for beginners.</p>
+<a class="btn" href="#why">Start Learning</a>
+</div>
+<div class="win" aria-hidden="true">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<pre class="code"><span class="c">&lt;!-- A tiny web page --&gt;</span>
+<span class="k">&lt;h1&gt;</span>Hello, world!<span class="k">&lt;/h1&gt;</span>
+<span class="k">&lt;p</span> <span class="t">class</span>=<span class="s">"intro"</span><span class="k">&gt;</span>
+  My first page.
+<span class="k">&lt;/p&gt;</span>
+
+<span class="c">/* Style it */</span>
+<span class="t">.intro</span> {
+  <span class="t">color</span>: <span class="s">teal</span>;
+  <span class="t">font-size</span>: <span class="s">20px</span>;
+}</pre>
+</div>
+</div>
+</div>
+
+<section class="white" id="why">
+<div class="wrap duo">
+<div>
+<h2>Why Learn Web Development?</h2>
+<p>Almost everything we do online, from reading an article to booking a table, happens through a website or web app. Understanding how these are made is a valuable skill, whether you want to build a personal project, create a site for a hobby or community, or simply understand the technology you use every day.</p>
+<p>Web development is also one of the more beginner-friendly areas of programming. You can start with a text editor and a browser, see results immediately, and build up gradually from simple pages to interactive projects. There is a huge amount of free learning material available, and a friendly global community of learners.</p>
+<p>Devora is designed to give you a clear picture before you dive in: what the main parts are, how they fit together and what to learn first. It does not promise quick results or jobs, but it can help you learn with more confidence and less confusion.</p>
+</div>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=70" alt="A laptop showing code on screen on a desk" width="1000" height="420" loading="lazy">
+</div>
+</section>
+
+<section class="tint" id="web">
+<div class="wrap">
+<h2>How the Web Works, in Simple Terms</h2>
+<p class="lead">When you type an address into your browser, a short conversation takes place behind the scenes. Understanding it makes everything else easier.</p>
+<div class="tri">
+<div class="tc"><span class="tag" style="background:#3b4fd8">Front-end</span><h3>What you see</h3><p>The visible part of a website: text, images, layout, buttons and animations. It runs in your browser and is built mainly with HTML, CSS and JavaScript.</p></div>
+<div class="tc"><span class="tag" style="background:#0e9f8e">Back-end</span><h3>What happens behind the scenes</h3><p>The server side. It stores data, handles accounts, processes requests and sends information to the front-end. Common languages include Python, JavaScript (Node.js), PHP and many others.</p></div>
+<div class="tc"><span class="tag" style="background:#e0457b">Full-stack</span><h3>Both together</h3><p>A full-stack developer works on both sides. Most beginners start with the front-end, since results are visible quickly and the basics are well supported.</p></div>
+</div>
+</div>
+</section>
+
+<section class="white" id="blocks">
+<div class="wrap">
+<h2>The Three Building Blocks of Every Website</h2>
+<p class="lead">Nearly every website you visit is built from the same three technologies, each with its own job.</p>
+<div class="tri">
+<div class="tc"><span class="tag" style="background:#e34c26">HTML</span><h3>Structure</h3><p>HyperText Markup Language defines the content: headings, paragraphs, links, images and lists. Think of it as the skeleton of a page.</p><code>&lt;h2&gt;Welcome&lt;/h2&gt;
+&lt;p&gt;Hello there.&lt;/p&gt;</code></div>
+<div class="tc"><span class="tag" style="background:#2965f1">CSS</span><h3>Style</h3><p>Cascading Style Sheets control how things look: colours, fonts, spacing and layout, including how a page adapts to phones and large screens.</p><code>h2 {
+  color: navy;
+  margin: 20px;
+}</code></div>
+<div class="tc"><span class="tag" style="background:#c79b00">JavaScript</span><h3>Behaviour</h3><p>JavaScript makes pages interactive: responding to clicks, updating content, validating input and more. It is the programming language of the browser.</p><code>button.onclick = () =&gt; {
+  alert("Hi!");
+};</code></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="path">
+<div class="wrap">
+<h2>A Realistic Learning Path for Beginners</h2>
+<p class="lead" style="color:#c0c8ec">Everyone learns at a different pace. Treat these stages as a flexible guide rather than a strict schedule.</p>
+<div class="road">
+<div class="rd"><b>01</b><h3>HTML Basics</h3><p>Learn headings, paragraphs, links, images and lists. Build a simple page about something you enjoy.</p></div>
+<div class="rd"><b>02</b><h3>CSS Basics</h3><p>Style your page with colours, fonts and spacing. Learn the box model, flexbox and grid for layout.</p></div>
+<div class="rd"><b>03</b><h3>Responsive Design</h3><p>Make your pages work on phones, tablets and desktops using flexible layouts and media queries.</p></div>
+<div class="rd"><b>04</b><h3>JavaScript Basics</h3><p>Learn variables, functions, conditions and loops, then use them to make a page respond to the user.</p></div>
+<div class="rd"><b>05</b><h3>Build Projects</h3><p>Create small projects such as a to-do list, a quiz or a personal page. Projects turn knowledge into skill.</p></div>
+</div>
+</div>
+</section>
+
+<section class="white" id="tools">
+<div class="wrap duo rev">
+<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=70" alt="A developer's laptop workspace with code on the screen" width="1000" height="420" loading="lazy">
+<div>
+<h2>Tools You Need to Get Started</h2>
+<p>The good news is that the starting toolkit is small, and most of it is free.</p>
+<div class="tools" style="grid-template-columns:1fr;margin-top:18px">
+<div class="tl"><p><strong>A code editor.</strong> A text editor designed for code highlights syntax and helps you spot mistakes. Several well-known free options are available.</p></div>
+<div class="tl"><p><strong>A modern browser.</strong> Browsers include developer tools that let you inspect elements, test styles and see errors as you work.</p></div>
+<div class="tl"><p><strong>Version control.</strong> A tool such as Git records changes to your project over time, so you can experiment safely and undo mistakes.</p></div>
+<div class="tl"><p><strong>Reliable learning resources.</strong> Official documentation, free tutorials and beginner courses offer structured explanations and exercises.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="tint">
+<div class="wrap">
+<h2>Habits That Help You Learn Faster</h2>
+<p class="lead">Consistency matters more than intensity. These simple habits make progress more likely.</p>
+<div class="tips">
+<div class="tp"><h3>Practise Little and Often</h3><p>Thirty focused minutes most days is usually better than one long session each month. Regular practice builds memory and confidence.</p></div>
+<div class="tp"><h3>Build, Don't Just Watch</h3><p>Reading and watching help, but you learn most by typing code yourself, making mistakes and fixing them.</p></div>
+<div class="tp"><h3>Read Error Messages</h3><p>Errors are clues, not failures. Learning to read them calmly is one of the most valuable skills a developer can build.</p></div>
+<div class="tp"><h3>Start Small</h3><p>Pick a simple goal, finish it, then add one feature at a time. Small wins keep motivation high.</p></div>
+<div class="tp"><h3>Ask Good Questions</h3><p>When you seek help, explain what you tried, what you expected and what happened. Clear questions get clearer answers.</p></div>
+<div class="tp"><h3>Be Patient With Yourself</h3><p>Feeling stuck is a normal part of learning. Take breaks, revisit basics and celebrate steady progress.</p></div>
+</div>
+<div class="gal">
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=70" alt="Lines of code displayed on a computer monitor" width="800" height="230" loading="lazy">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=70" alt="A programmer's screen showing source code" width="800" height="230" loading="lazy">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70" alt="People collaborating at a table with laptops" width="800" height="230" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="white" id="faq">
+<div class="wrap faq">
+<h2 style="text-align:center">Frequently Asked Questions</h2>
+<details><summary>What is Devora?</summary><p>Devora is an informational website that provides general educational content about web development for beginners. It is not a school, bootcamp or employment service.</p></details>
+<details><summary>Do I need to be good at maths to learn web development?</summary><p>Not for the basics. Everyday web development relies more on logical thinking and patience than advanced maths, although some areas of programming do use more maths.</p></details>
+<details><summary>Which should I learn first: HTML, CSS or JavaScript?</summary><p>Most learners begin with HTML, then CSS, and move on to JavaScript once they are comfortable building and styling simple pages.</p></details>
+<details><summary>How long does it take to learn?</summary><p>It varies greatly. Many people can build a simple page within days or weeks, while becoming confident with more complex projects takes months or longer, depending on practice time.</p></details>
+<details><summary>Do I need an expensive computer?</summary><p>No. Most beginner web development can be done on a basic laptop or desktop with a modern browser and a free code editor.</p></details>
+<details><summary>Does Devora offer courses, certificates or jobs?</summary><p>No. This page is an educational guide only. It does not sell courses, issue certificates or promise employment outcomes.</p></details>
+</div>
+</section>
+
+<section class="tint">
+<div class="wrap">
+<div class="disc" id="disclaimer">
+<h2>Disclaimer</h2>
+<p>The information on this page is provided for general educational and informational purposes only. Learning speed and outcomes vary widely with time, effort, background and circumstances, and Devora makes no guarantee of any particular result, skill level, qualification, job or income. Nothing here is professional career, educational, legal or financial advice. Technologies and best practices change over time, so always check current official documentation. Be careful when downloading software or sharing personal information online, and use trusted sources only. Code examples are simplified for illustration. Images are used for illustration only. Any third-party names mentioned belong to their respective owners. You use this information at your own discretion and risk. Please also read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+<strong style="color:#fff;font-size:20px">Devora</strong>
+<p><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="#disclaimer">Disclaimer</a></p>
+<p>&copy; 2026 Devora. All rights reserved. This website provides general educational information about web development and does not sell products or services.</p>
+</div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Devora – Web Development Basics for Beginners","description":"Educational beginner's guide to web development: front-end and back-end, HTML, CSS, JavaScript, tools and a learning path.","inLanguage":"en"}
+</script>
+</body>
+</html>
